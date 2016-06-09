@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Guardian Tabbed Component</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!--
+      The component itself should be built
+      to still be visible without JavaScript,
+      hence my quick choice of using empty <li>.
+      Dropping them leaving just their container
+      should work as well.
+
+      I've used "stylesheets on demand"
+      https://jakearchibald.com/2016/link-in-body/
+
+      I've used a deferred script at the end to avoid
+      blocking on IE9+
+      (still blocks until everything is ready right before
+       DOMContentLoaded but since JS is mandatory to work
+       I guess this is just an "OKish" solution)
+    -->
+    <link rel="stylesheet" href="css/tabbed-component.css">
+    <ul class="tabbed-component" data-page-size="5">
+      <li data-section="uk-news">
+        <h3 class="section-name">UK News</h3>
+        <ol class="results">
+          <li>You</li>
+          <li>can</li>
+          <li>try</li>
+          <li>without</li>
+          <li>JS</li>
+        </ol>
+      </li>
+      <li data-section="football">
+        <h3 class="section-name">Football</h3>
+        <ol class="results">
+          <li>Also</li>
+          <li>you</li>
+          <li>could</li>
+          <li>try</li>
+          <li>without CSS</li>
+        </ol>
+      </li>
+      <li data-section="travel">
+        <h3 class="section-name">Travel</h3>
+        <ol class="results">
+          <li>I hope</li>
+          <li>this</li>
+          <li>met</li>
+          <li>your</li>
+          <li>expectations</li>
+        </ol>
+      </li>
+    </ul>
+    <script defer src="js/tabbed-component.js"></script>
+  </body>
+</html>

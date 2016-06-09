@@ -1,0 +1,82 @@
+.tabbed-component {
+  padding: 0;
+  margin: auto;
+  font-size: 1rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.tabbed-component li,
+.tabbed-component .section-name {
+  padding: 4px;
+}
+
+.tabbed-component:after {
+  display: block;
+  content: '';
+  clear: left;
+}
+
+.tabbed-component [data-section] {
+  min-width: 300px;
+  list-style: none;
+  float: left;
+}
+
+.tabbed-component [data-section] .section-name {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.tabbed-component .results {
+  text-align: left;
+}
+
+/*
+  once promoted to JS the structure is slightly different
+
+  before
+    [tab[info], tab[info], tab[info]]
+
+  after
+    [
+      [tab, tab, tab],
+      info
+    ]
+
+  this is probably not ideal
+  however, it kinda worked well in this rushed result
+
+*/
+.js.tabbed-component .bar {
+  display: block;
+  white-space:nowrap;
+}
+
+.js.tabbed-component .bar,
+.js.tabbed-component [data-section] {
+  padding: 0;
+  margin: 0;
+}
+
+.js.tabbed-component [data-section] {
+  float: none;
+  min-width: 33%;
+  display: inline-block;
+  background: lightgray;
+  color: darkgray;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none; /* not sure this is even a thing */
+  user-select: none;
+}
+
+.js.tabbed-component [data-section].shown {
+  background: inherit;
+  color: inherit;
+}
+
+.js.tabbed-component [data-section]:hover {
+  cursor: pointer;
+}
